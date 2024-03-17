@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Import / Export </title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png"> -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo.png">
+    <!-- <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png"> -->
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico"> -->
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="assets/css/theme.css" rel="stylesheet" />
+
+    <style>
+        button{
+            border: none;
+            background-color: transparent;
+        }
+        .product_active{
+            color: #4372b8;
+            font-weight: bold;
+        }
+        .card:hover{
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px !important;
+        }
+    </style>
+
+  </head>
+
+
+  <body>
+    <!-- main content -->
+    <main class="main" id="top">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-5 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
+            <div class="container"><a class="navbar-brand text_primary fw-bold d-flex justify-content-start" href="./index.html"><img src="assets/img/logo.png" height="34" alt="logo" /><img src="assets/img/logo (2).png" height="34" alt="logo" /></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
+              <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base align-items-lg-center align-items-start">
+                  <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="./index.html">Home</a></li>
+                  <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#">Product</a></li>
+                  <!-- <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#booking">About Us</a></li> -->
+                  <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="./contactUs.html">Contact Us</a></li>
+                  <li class="nav-item px-3 px-xl-4"><div class="icon-group"> <a class="text-decoration-none icon-item shadow-social" id="facebook" href="#!"><i class="fab fa-facebook-f"> </i></a><a class="text-decoration-none icon-item shadow-social" id="instagram" href="#!"><i class="fab fa-instagram"> </i></a><a class="text-decoration-none icon-item shadow-social" id="twitter" href="#!"><i class="fab fa-twitter"> </i></a></div></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <section style="padding-top: 7rem;padding-bottom: 0;">
+
+            <div class="container">
+              <div class="mb-7 d-md-flex justify-content-between align-items-center">
+                <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-center text-capitalize">Our Products</h3>
+                <ul class="filter-btn" style="display: flex;justify-content: center;gap: 1rem;list-style: none;align-items: center;flex-wrap: wrap;">
+
+                    <li class="filter-btn-item">
+                      <button class="filter-btn product_active" data-filter-btn="all">All Products</button>
+                    </li>
+                    <li data-filter-btn="line">|</li>
+                    <li class="filter-btn-item">
+                      <button class="filter-btn" data-filter-btn="x">x</button>
+                    </li>
+                    <li data-filter-btn="line">|</li>
+                    <li class="filter-btn-item">
+                      <button class="filter-btn" data-filter-btn="y">y</button>
+                    </li>
+                    <li data-filter-btn="line">|</li>
+                    <li class="filter-btn-item">
+                      <button class="filter-btn" data-filter-btn="z">z</button>
+                    </li>
+      
+                  </ul>
+              </div>
+              <div class="row" id="data-list">
+                <div class="col-md-3 mb-4 product_card" data-category="x">
+                  <div class="card overflow-hidden shadow" > <img class="card-img-top" src="assets/img/dest/dest1.jpg" alt="Rome, Italty" />
+                    <div class="card-body pb-2 pt-4 px-3">
+                      <div class="d-flex flex-column flex-lg-row justify-content-between mb-3">
+                        <h4 class="text-secondary fw-medium"><a class="link-900 text-decoration-none fs-2 stretched-link" href="#!">Rome, Italty</a></h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-4 product_card" data-category="y" >
+                  <div class="card overflow-hidden shadow" > <img class="card-img-top" src="assets/img/dest/dest2.jpg" alt="London, UK" />
+                    <div class="card-body pb-2 pt-4 px-3">
+                      <div class="d-flex flex-column flex-lg-row justify-content-between mb-3">
+                        <h4 class="text-secondary fw-medium"><a class="link-900 text-decoration-none fs-2 stretched-link" href="#!">London, UK</a></h4>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-4 product_card" data-category="z">
+                  <div class="card overflow-hidden shadow" > <img class="card-img-top" src="assets/img/dest/dest3.jpg" alt="Full Europe" />
+                    <div class="card-body pb-2 pt-4 px-3">
+                      <div class="d-flex flex-column flex-lg-row justify-content-between mb-3">
+                        <h4 class="text-secondary fw-medium"><a class="link-900 text-decoration-none fs-2 stretched-link" href="#!">Full Europe</a></h4>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-4 product_card" data-category="z">
+                    <div class="card overflow-hidden shadow"> <img class="card-img-top" src="assets/img/dest/dest3.jpg" alt="Full Europe" />
+                      <div class="card-body pb-2 pt-4 px-3">
+                        <div class="d-flex flex-column flex-lg-row justify-content-between mb-3">
+                          <h4 class="text-secondary fw-medium"><a class="link-900 text-decoration-none fs-2 stretched-link" href="#!">Full Europe</a></h4>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div><!-- end of .container-->
+    
+          </section>
+
+
+          <section class="pb-0 pb-lg-4">
+
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3 col-md-7 col-12 mb-4 mb-md-6 mb-lg-0 order-0"> <img class="mb-4" src="assets/img/logo2.png" width="150" alt="jadoo" />
+                  <p class="fs--1 text-secondary mb-0 fw-medium">World-Class Sanitary Ware Imports, Exports.</p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-1 order-md-2">
+                  <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Company</h4>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">About</a></li>
+                    <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Careers</a></li>
+                    <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Mobile</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-2 order-md-3">
+                  <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Contact</h4>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Help/FAQ</a></li>
+                    <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Press</a></li>
+                    <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Affiliate</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-3 order-md-4">
+                  <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">More</h4>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Airlinefees</a></li>
+                    <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Airline</a></li>
+                    <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Low fare tips</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-3 col-md-5 col-12 mb-4 mb-md-6 mb-lg-0 order-lg-4 order-md-1">
+                  <div class="icon-group mb-4"> <a class="text-decoration-none icon-item shadow-social" id="facebook" href="#!"><i class="fab fa-facebook-f"> </i></a><a class="text-decoration-none icon-item shadow-social" id="instagram" href="#!"><i class="fab fa-instagram"> </i></a><a class="text-decoration-none icon-item shadow-social" id="twitter" href="#!"><i class="fab fa-twitter"> </i></a></div>
+                </div>
+              </div>
+            </div><!-- end of .container-->
+    
+          </section>
+
+
+      <div class="py-5 text-center">
+        <p class="mb-0 text-secondary fs--1 fw-medium">All rights reserved@topgrowth.com </p>
+      </div>
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+
+   
+
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script>
+        const filterBtn = document.querySelectorAll('.filter-btn');
+        const dataList = document.getElementById('data-list');
+        filterBtn.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if(e.target.getAttribute('data-filter-btn') === "line") return;
+                const category = e.target.getAttribute('data-filter-btn');
+                const cards = dataList.querySelectorAll('.product_card');
+                cards.forEach(card => {
+                    if(category === 'all'){
+                        card.style.display = 'block';
+                    }else{
+                        if(card.getAttribute('data-category') === category){
+                            card.style.display = 'block';
+                        }else{
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+                filterBtn.forEach(btn => {
+                    btn.classList.remove('product_active');
+                });
+                e.target.classList.add('product_active');
+            });
+        });
+    </script>
+    <script src="vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
+  </body>
+</html>
