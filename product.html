@@ -72,19 +72,19 @@
                 <ul class="filter-btn" style="display: flex;justify-content: center;gap: 1rem;list-style: none;align-items: center;flex-wrap: wrap;">
 
                     <li class="filter-btn-item">
-                      <button class="filter-btn product_active" data-filter-btn="all">All Products</button>
+                      <button class="filter-btn product_active" onclick="filterData('all',this)" data-filter-btn="all">All Products</button>
                     </li>
-                    <li data-filter-btn="line">|</li>
+                    <li data-filter-btn="line" onclick="filterData('line',this)">|</li>
                     <li class="filter-btn-item">
-                      <button class="filter-btn" data-filter-btn="x">x</button>
+                      <button class="filter-btn" onclick="filterData('x',this)" data-filter-btn="x">x</button>
                     </li>
-                    <li data-filter-btn="line">|</li>
+                    <li data-filter-btn="line" onclick="filterData('line',this)">|</li>
                     <li class="filter-btn-item">
-                      <button class="filter-btn" data-filter-btn="y">y</button>
+                      <button class="filter-btn" onclick="filterData('y',this)" data-filter-btn="y">y</button>
                     </li>
-                    <li data-filter-btn="line">|</li>
+                    <li data-filter-btn="line" onclick="filterData('line',this)">|</li>
                     <li class="filter-btn-item">
-                      <button class="filter-btn" data-filter-btn="z">z</button>
+                      <button class="filter-btn" onclick="filterData('z',this)" data-filter-btn="z">z</button>
                     </li>
       
                   </ul>
@@ -190,30 +190,31 @@
     <!--    JavaScripts-->
     <!-- ===============================================-->
     <script>
-        const filterBtn = document.querySelectorAll('.filter-btn');
+
         const dataList = document.getElementById('data-list');
-        filterBtn.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                if(e.target.getAttribute('data-filter-btn') === "line") return;
-                const category = e.target.getAttribute('data-filter-btn');
-                const cards = dataList.querySelectorAll('.product_card');
-                cards.forEach(card => {
-                    if(category === 'all'){
+        function filterData(category,e){
+            if(category === "line")
+            {
+                return ;
+            }
+            const cards = dataList.querySelectorAll('.product_card');
+            cards.forEach(card => {
+                if(category === 'all'){
+                    card.style.display = 'block';
+                }else{
+                    if(card.getAttribute('data-category') === category){
                         card.style.display = 'block';
                     }else{
-                        if(card.getAttribute('data-category') === category){
-                            card.style.display = 'block';
-                        }else{
-                            card.style.display = 'none';
-                        }
+                        card.style.display = 'none';
                     }
-                });
-                filterBtn.forEach(btn => {
+                }
+            });
+            const filterBtn = document.querySelectorAll('.filter-btn');
+            filterBtn.forEach(btn => {
                     btn.classList.remove('product_active');
                 });
-                e.target.classList.add('product_active');
-            });
-        });
+            e.classList.add('product_active');
+        }
     </script>
     <script src="vendors/@popperjs/popper.min.js"></script>
     <script src="vendors/bootstrap/bootstrap.min.js"></script>
