@@ -30,6 +30,9 @@
     <!-- ===============================================-->
     <link href="assets/css/theme.css" rel="stylesheet" />
 
+    <!-- font link  -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
+
 
       <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -543,6 +546,12 @@
     disableOnInteraction: false
   }
 });
+let main_content = document.getElementsByClassName("main_content")[0];
+    let loader_perent = document.getElementsByClassName("loder_perent")[0];
+    window.addEventListener("load",function(){
+        main_content.style.display = "block";
+        loader_perent.style.display = "none";
+    })
     </script>
     <script src="vendors/@popperjs/popper.min.js"></script>
     <script src="vendors/bootstrap/bootstrap.min.js"></script>
@@ -550,17 +559,7 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="vendors/fontawesome/all.min.js"></script>
     <script src="assets/js/theme.js"></script>
-    
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
-    <script>
-      let main_content = document.getElementsByClassName("main_content")[0];
-    let loader_perent = document.getElementsByClassName("loder_perent")[0];
-    window.addEventListener("load",function(){
-        main_content.style.display = "block";
-        loader_perent.style.display = "none";
-    })
-    </script>
+  
   </body>
 
 </html>
