@@ -54,6 +54,42 @@
       height: 100%;
       object-fit: cover;
     }
+    .loder_perent{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+.loader {
+  width: 20px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #4372b8;
+  box-shadow: 0 0 0 0 #4372b84b;
+  animation: l2 1.5s infinite linear;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 #4372b84b;
+  animation: inherit;
+  animation-delay: -0.5s;
+}
+.loader:after {
+  animation-delay: -1s;
+}
+@keyframes l2 {
+    100% {box-shadow: 0 0 0 40px #4372b84b}
+}
+.main_content{
+    display: none;
+}
 </style>
     
 
@@ -61,11 +97,15 @@
 
 
   <body>
+    <div class="loder_perent">
+
+      <div class="loader"></div>
+    </div>
 
     <!-- ===============================================-->
     <!--    Main Content-->
     <!-- ===============================================-->
-    <main class="main" id="top">
+    <main class="main main_content" id="top">
       <nav class="navbar navbar-expand-lg navbar-light fixed-top py-5 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
         <div class="container"><a class="navbar-brand text_primary fw-bold d-flex justify-content-start" href="index.html"><img src="assets/img/logo.png" height="34" alt="logo" /><img src="assets/img/logo (2).png" height="34" alt="logo" /></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
@@ -513,6 +553,14 @@
     
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
+    <script>
+      let main_content = document.getElementsByClassName("main_content")[0];
+    let loader_perent = document.getElementsByClassName("loder_perent")[0];
+    window.addEventListener("load",function(){
+        main_content.style.display = "block";
+        loader_perent.style.display = "none";
+    })
+    </script>
   </body>
 
 </html>
