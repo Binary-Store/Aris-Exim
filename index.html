@@ -57,9 +57,12 @@
       height: 100%;
       object-fit: cover;
     }
+    
     .loder_perent{
-        position: relative;
-        width: 100%;
+        position: absolute;
+        background-color: white;
+        z-index: 1050;
+        width: 100vw;
         height: 100vh;
     }
 .loader {
@@ -90,9 +93,7 @@
 @keyframes l2 {
     100% {box-shadow: 0 0 0 40px #4372b84b}
 }
-.main_content{
-    display: none;
-}
+
 </style>
     
 
@@ -132,7 +133,7 @@
           <div class="row align-items-center">
             <div class=" col-lg-6 order-0 order-lg-1 text-end image-container">
               <!-- <img loding="lazy"class="pt-md-0 hero-img" id="hero-img" src="assets/img/hero/hero.png" alt="hero-header" /> -->
-              <div class="swiper mySwiper">
+              <div class="swiper" id="mySwiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <img loding="lazy"class="pt-md-0 hero-img" id="hero-img" src="assets/img/hero/hero.png" alt="hero-header" />
@@ -538,11 +539,11 @@
 
     <!-- Initialize Swiper -->
     <script>
- let swiper = new Swiper(".mySwiper", {
-  spaceBetween: 30,
-  centeredSlides: true,
+ let swiper = new Swiper("#mySwiper", {
+  effect: "flip",
+  grabCursor: true,
   autoplay: {
-    delay: 2000,
+    delay: 3500,
     disableOnInteraction: false
   }
 });
