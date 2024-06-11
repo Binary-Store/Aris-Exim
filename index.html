@@ -206,8 +206,8 @@
         <div class="swiper-container ">
 
           <div class="swiper-slide" id="slide1_content">
-            <video id="video1" class="video1 position-absolute" muted autoplay>
-              <source src="./assets/img/hero/video1.webm" type="video/mp4">
+            <video id="video1" class="video1 position-absolute" muted autoplay playsinline>
+              <source src="./assets/img/hero/video1.webm" type="video/webm">
               Your browser does not support the video tag.
             </video>
             <div class="d-flex flex-column justify-content-center align-items-center h-100 w-100 "
@@ -227,8 +227,8 @@
             </div>
           </div>
           <div class="swiper-slide" id="slide2_content">
-            <video id="video2" class="video2 position-absolute" muted>
-              <source src="./assets/img/hero/video2.webm" type="video/mp4">
+            <video id="video2" class="video2 position-absolute" muted playsinline>
+              <source src="./assets/img/hero/video2.webm" type="video/webm">
               Your browser does not support the video tag.
             </video>
             <div class="d-flex flex-column justify-content-center align-items-center h-100 w-100 "
@@ -749,40 +749,75 @@
 
   <!-- Initialize Swiper -->
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let video1 = document.getElementById("video1");
+      let video2 = document.getElementById("video2");
+      let slide1_content = document.getElementById('slide1_content');
+      let slide2_content = document.getElementById("slide2_content");
+      let main_content = document.getElementsByClassName("main_content")[0];
+      let loader_perent = document.getElementsByClassName("loder_perent")[0];
 
-    let video1 = document.getElementById("video1");
-    let video2 = document.getElementById("video2");
-    let slide1_content = document.getElementById('slide1_content');
-    let slide2_content = document.getElementById("slide2_content");
-    slide1_content.style.display = 'flex'
-    slide2_content.style.display = 'none'
+      // Set initial display styles
+      slide1_content.style.display = 'flex';
+      slide2_content.style.display = 'none';
+      video2.style.display = 'none';
+      video1.muted = true;
+      video2.muted = true;
 
-    video1.onended = function () {
-      video2.play();
-      video1.style.opacity = 0;
-      video2.style.opacity = 1;
-      video1.style.display = "none"
-      video2.style.display = "inline"
-      slide1_content.style.display = 'none'
-      slide2_content.style.display = "flex"
-    }
+      // Function to play the first video
+      function playVideo1() {
+        video1.style.display = 'inline';
+        video2.style.display = 'none';
+        video1.style.opacity = 1;
+        video2.style.opacity = 0;
+        slide1_content.style.display = 'flex';
+        slide2_content.style.display = 'none';
+        video1.play().catch(error => console.error('Error attempting to play video1:', error));
+      }
 
-    video2.onended = function () {
-      video1.play();
-      video2.style.opacity = 0;
-      video1.style.opacity = 1;
-      video1.style.display = "inline"
-      video2.style.display = "none"
-      slide1_content.style.display = 'flex'
-      slide2_content.style.display = "none"
-    }
-    let main_content = document.getElementsByClassName("main_content")[0];
-    let loader_perent = document.getElementsByClassName("loder_perent")[0];
-    setInterval(() => {
-      main_content.style.display = "block";
-      loader_perent.style.display = "none";
-    }, 2000)
+      // Function to play the second video
+      function playVideo2() {
+        video2.style.display = 'inline';
+        video1.style.display = 'none';
+        video2.style.opacity = 1;
+        video1.style.opacity = 0;
+        slide1_content.style.display = 'none';
+        slide2_content.style.display = 'flex';
+        video2.play().catch(error => console.error('Error attempting to play video2:', error));
+      }
+
+      // Event listener for when video1 ends
+      video1.onended = function () {
+        playVideo2();
+      };
+
+      // Event listener for when video2 ends
+      video2.onended = function () {
+        playVideo1();
+      };
+
+      // Initial autoplay attempt
+      video1.play().catch(error => {
+        console.error('Autoplay was prevented:', error);
+        // Attempt to start playback after user interaction
+        document.addEventListener('click', userInteractionHandler);
+      });
+
+      function userInteractionHandler() {
+        video1.play().then(() => {
+          document.removeEventListener('click', userInteractionHandler); // Remove the handler after successful play
+        }).catch(err => console.error('Play was prevented after user interaction:', err));
+      }
+
+      // Hide the loader and display main content after 2 seconds
+      setTimeout(() => {
+        main_content.style.display = "block";
+        loader_perent.style.display = "none";
+      }, 2000);
+    });
   </script>
+
+
   <script src="vendors/@popperjs/popper.min.js"></script>
   <script src="vendors/bootstrap/bootstrap.min.js"></script>
   <script src="vendors/is/is.min.js"></script>
