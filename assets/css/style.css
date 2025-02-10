@@ -6208,6 +6208,9 @@ td.quantity {
     .about-sec.style-3 .about-wrapper .image-2 {
         display: none;
     }
+    .about-sec.style-3 .about-wrapper:before{
+        display: none;
+    }
     .about-sec.style-3 .section-title-wrap {
         margin-top: 60px;
     }
