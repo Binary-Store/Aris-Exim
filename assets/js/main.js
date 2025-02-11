@@ -128,14 +128,19 @@
         arrows: true,
         prevArrow: $('.banner .slider-prev'),
         nextArrow: $('.banner .slider-next'),
+        autoplay: true,       // Enables automatic sliding
+        autoplaySpeed: 3000,  // Sets the delay (in milliseconds) between slides
         responsive: [{
             breakpoint: 768,
             settings: {
                 arrows: false,
-                dots: true
+                dots: true,
+                autoplay: true,  // Ensures autoplay works on smaller screens
+                autoplaySpeed: 3000
             }
         }]
     });
+
 
     /*-------------------------------------------------------------------------------
     Testimonials Slider
