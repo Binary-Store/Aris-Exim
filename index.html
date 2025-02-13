@@ -484,135 +484,7 @@
           <h2 class="title">From My Blog</h2>
           <p class="subtitle">Usual three flavour masalas</p>
         </div>
-        <div class="row masonry">
-          <!-- Post Start -->
-          <div class="col-lg-6 col-md-6 masonry-item">
-            <article class="post">
-              <div class="post-thumbnail">
-                <a href="blog-single-v1.html"><img loading="lazy" src="assets/img/blog/1.png" alt="blog post" /></a>
-                <div class="post-meta">
-                  <span>September 22, 2021</span>
-                  <span>Posted by Jonathan Pick</span>
-                </div>
-              </div>
-              <div class="post-categories">
-                <a href="#">Agro</a>
-              </div>
-              <div class="post-body">
-                <h5 class="post-title"><a href="blog-single-v1.html">Glass container for masalas</a></h5>
-                <p class="post-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's content...
-                </p>
-              </div>
-            </article>
-          </div>
-          <!-- Post End -->
-
-          <!-- Post Start -->
-          <div class="col-lg-6 col-md-6 masonry-item">
-            <article class="post">
-              <div class="post-thumbnail">
-                <a href="blog-single-v1.html"><img loading="lazy" src="assets/img/blog/2.png" alt="blog post" /></a>
-                <div class="post-meta">
-                  <span>September 24, 2021</span>
-                  <span>Posted by Jonathan Pick</span>
-                </div>
-              </div>
-              <div class="post-categories">
-                <a href="#">Agro</a>
-              </div>
-              <div class="post-body">
-                <h5 class="post-title"><a href="blog-single-v1.html">Various Spices powder</a></h5>
-                <p class="post-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's content...
-                </p>
-              </div>
-            </article>
-          </div>
-          <!-- Post End -->
-
-          <!-- Post Start -->
-          <div class="col-lg-6 col-md-6 masonry-item">
-            <article class="post post-format-video">
-              <div class="post-thumbnail">
-                <a href="blog-single-v1.html"><img loading="lazy" src="assets/img/blog/3.jpg" alt="blog post" /></a>
-                <div class="post-meta">
-                  <span>September 22, 2021</span>
-                  <span>Posted by Jonathan Pick</span>
-                </div>
-                <div class="video-player-trigger">
-                  <a href="https://www.youtube.com/watch?v=ySITvuQ1K74" class="popup-youtube">
-                    <i class="fas fa-play"></i>
-                    <div class="video-player-icons">
-                      <i class="flaticon-spices"></i>
-                      <i class="flaticon-ginger"></i>
-                      <i class="flaticon-spices-2"></i>
-                      <i class="flaticon-anise"></i>
-                      <i class="flaticon-herb"></i>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="post-categories">
-                <a href="#">How-To</a>
-                <a href="#">Agro</a>
-              </div>
-              <div class="post-body">
-                <h5 class="post-title"><a href="blog-single-v1.html">Fresh Organic Mustard Leaves</a></h5>
-                <p class="post-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's content...
-                </p>
-              </div>
-            </article>
-          </div>
-          <!-- Post End -->
-
-          <!-- Post Start -->
-          <div class="col-lg-6 col-md-6 masonry-item">
-            <article class="post">
-              <div class="post-thumbnail">
-                <a href="blog-single-v1.html"><img loading="lazy" src="assets/img/blog/1.png" alt="blog post" /></a>
-                <div class="post-meta">
-                  <span>April 26, 2021</span>
-                  <span>Posted by Jonathan Pick</span>
-                </div>
-              </div>
-              <div class="post-categories">
-                <a href="#">Lunch</a>
-              </div>
-              <div class="post-body">
-                <h5 class="post-title"><a href="blog-single-v1.html">Organic Green Bell Pepper</a></h5>
-                <p class="post-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's content...
-                </p>
-              </div>
-            </article>
-          </div>
-          <!-- Post End -->
-
-          <!-- Post Start -->
-          <div class="col-lg-6 col-md-6 masonry-item">
-            <article class="post">
-              <div class="post-thumbnail">
-                <a href="blog-single-v1.html"><img loading="lazy" src="assets/img/blog/5.png" alt="blog post" /></a>
-                <div class="post-meta">
-                  <span>April 26, 2021</span>
-                  <span>Posted by Jonathan Pick</span>
-                </div>
-              </div>
-              <div class="post-categories">
-                <a href="#">Seasonal Agro</a>
-              </div>
-              <div class="post-body">
-                <h5 class="post-title"><a href="blog-single-v1.html">Usual three flavour masalas</a></h5>
-                <p class="post-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's content...
-                </p>
-              </div>
-            </article>
-          </div>
-          <!-- Post End -->
-        </div>
+        <div class="row masonry" id="blog_row"></div>
       </div>
     </section>
     <!-- Blog Posts End -->
@@ -795,6 +667,7 @@
     <script src="./assets/data/index.js"></script>
     <script>
       const productContainer = document.getElementById("product_row");
+      const blog_row = document.getElementById("blog_row");
       product_data.forEach((product, index) => {
         const productIndex = index + 1;
         const productDiv = document.createElement("div");
@@ -814,6 +687,29 @@
           </div>
         `;
         productContainer.appendChild(productDiv);
+      });
+
+      blog_data.forEach((blog, index) => {
+        const blogIndex = index + 1;
+        const blogDiv = document.createElement("div");
+        blogDiv.classList.add("col-lg-6", "col-md-6", "masonry-item");
+        blogDiv.innerHTML = ` 
+            <article class="post">
+              <div class="post-thumbnail">
+                <a href="blog-details.html?blogId=${blog.id}"><img loading="lazy" src="${blog.image}" alt="blog post" /></a>
+                <div class="post-meta">
+                  <span>${blog.date}</span>
+                  <span>Posted by ${blog.owner}</span>
+                </div>
+              </div>
+              <div class="post-body">
+                <h5 class="post-title"><a href="blog-details.html?blogId=${blog.id}">${blog.name}</a></h5>
+                <p class="post-text text-truncate">
+                  ${blog.description}
+                </p>
+              </div>
+            </article>`;
+        blog_row.appendChild(blogDiv);
       });
     </script>
 

@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon.png" />
+    <script src="./assets/data/index.js"></script>
   </head>
 
   <body>
@@ -180,18 +181,13 @@
     <!-- Header End -->
 
     <!-- Subheader Start -->
-    <div
-      class="subheader subheader-2 bg-cover bg-parallax"
-      style="background-image: url('assets/img/blog/single-2.jpg')">
+    <div class="subheader subheader-2 bg-cover bg-parallax" id="blog_header">
       <div class="container">
         <div class="subheader-inner">
-          <h1>Glass container for masalas</h1>
+          <h1 class="blog_title">Glass container for masalas</h1>
           <div class="post-meta">
-            <span> <i class="far fa-calendar"></i> September 22, 2021</span>
-            <span> <i class="far fa-user"></i> Posted by Fredrick Flow</span>
-          </div>
-          <div class="post-categories">
-            <a href="#">Agro</a>
+            <span> <i class="far fa-calendar"></i> <span id="blog_date"> September 22, 2021 </span></span>
+            <span> <i class="far fa-user"></i> <span id="blog_owner"> Posted by Fredrick Flow</span></span>
           </div>
         </div>
       </div>
@@ -204,21 +200,10 @@
       <div class="container">
         <div class="post-single">
           <div class="post-content">
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
-              of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-              like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book.
-            </p>
-            <img src="assets/img/blog/11.jpg" alt="post" />
-            <p>
+            <p id="blog_description"></p>
+            <!-- <img src="assets/img/blog/11.jpg" alt="post" /> -->
+            <div id="blog_section_details"></div>
+            <!-- <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
               industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
               scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
@@ -245,30 +230,19 @@
               <div class="col-md-6">
                 <img src="assets/img/blog/7.jpg" alt="post" />
               </div>
-            </div>
-            <p>
+            </div> -->
+            <!-- <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
               industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
               scrambled it to make a type specimen book.
-            </p>
+            </p> -->
           </div>
         </div>
-
-        <!-- Post Meta start -->
-        <div class="post-meta">
-          <div class="tags">
-            <a href="#">Spicess</a>
-            <a href="#">Spice</a>
-            <a href="#">Spiceie</a>
-            <a href="#">Generic</a>
-          </div>
-        </div>
-        <!-- Post Meta End -->
       </div>
       <!-- Content End -->
 
       <!-- About Author Start -->
-      <div class="section bg-cover" style="background-image: url('assets/img/bg/1.jpg')">
+      <!-- <div class="section bg-cover" style="background-image: url('assets/img/bg/1.jpg')">
         <div class="container">
           <div class="about-author mb-0">
             <h4>About the author</h4>
@@ -299,13 +273,13 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- About Author End -->
     </div>
     <!-- Blog Posts End -->
 
     <!-- Instagram Start -->
-    <div class="insta style-6 section">
+    <div class="insta style-6">
       <div class="container">
         <div class="section-title-wrap section-header text-center">
           <span><i class="fab fa-instagram"></i></span>
@@ -426,6 +400,35 @@
       </div>
     </footer>
     <!-- Footer End -->
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const blog_id = urlParams.get("blogId");
+      const blog_details = blog_data.find((blog) => blog.id == blog_id);
+      const blog_title = document.getElementsByClassName("blog_title");
+      const blog_image = document.getElementById("blog_header");
+      const blog_date = document.getElementById("blog_date");
+      const blog_owner = document.getElementById("blog_owner");
+      const blog_description = document.getElementById("blog_description");
+      const blog_section_details = document.getElementById("blog_section_details");
+
+      blog_image.style.backgroundImage = `url('${blog_details.image}')`;
+      Array.from(blog_title).forEach((title) => (title.innerHTML = blog_details.title));
+      blog_date.innerHTML = blog_details.date;
+      blog_owner.innerHTML = blog_details.owner;
+      blog_description.innerHTML = blog_details.description;
+      blog_details.section.forEach((detail, index) => {
+        const detail_div = document.createElement("div");
+        const heading = document.createElement("h4");
+        heading.innerHTML = detail.name;
+        const paragraph = document.createElement("p");
+        paragraph.style.whiteSpace = "pre-line";
+        paragraph.innerHTML = detail.description;
+        detail_div.appendChild(heading);
+        detail_div.appendChild(paragraph);
+        blog_section_details.appendChild(detail_div);
+      });
+    </script>
 
     <!-- Vendor Scripts -->
     <script src="assets/js/plugins/jquery-3.4.1.min.js"></script>
