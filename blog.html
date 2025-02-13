@@ -200,114 +200,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="row">
-              <!-- Post Start -->
-              <div class="col-lg-6 col-md-6">
-                <article class="post">
-                  <div class="post-thumbnail">
-                    <a href="blog-details.html"><img src="assets/img/blog/1.png" alt="blog post" /></a>
-                    <div class="post-meta">
-                      <span>September 22, 2021</span>
-                      <span>Posted by Jonathan Pick</span>
-                    </div>
-                  </div>
-                  <div class="post-categories">
-                    <a href="#">Agro</a>
-                  </div>
-                  <div class="post-body">
-                    <h5 class="post-title"><a href="blog-details.html">Glass container for masalas</a></h5>
-                    <p class="post-text">
-                      Some quick example text to build on the card title and make up the bulk of the card's content
-                    </p>
-                  </div>
-                </article>
-              </div>
-              <!-- Post End -->
-
-              <!-- Post Start -->
-              <div class="col-lg-6 col-md-6">
-                <article class="post">
-                  <div class="post-thumbnail">
-                    <a href="blog-details.html">
-                      <img src="assets/img/blog/5.png" alt="blog post" />
-                    </a>
-                    <div class="post-meta">
-                      <span>April 26, 2021</span>
-                      <span>Posted by Jonathan Pick</span>
-                    </div>
-                  </div>
-                  <div class="post-categories">
-                    <a href="#">Seasonal Agro</a>
-                  </div>
-                  <div class="post-body">
-                    <h5 class="post-title"><a href="blog-details.html">Agriculture </a></h5>
-                    <p class="post-text">
-                      Some quick example text to build on the card title and make up the bulk of the card's content...
-                    </p>
-                  </div>
-                </article>
-              </div>
-              <!-- Post End -->
-
-              <!-- Post Start -->
-              <div class="col-lg-6 col-md-6">
-                <article class="post">
-                  <div class="post-thumbnail">
-                    <a href="blog-details.html"><img src="assets/img/blog/4.jpg" alt="blog post" /></a>
-                    <div class="post-meta">
-                      <span>April 26, 2021</span>
-                      <span>Posted by Jonathan Pick</span>
-                    </div>
-                  </div>
-                  <div class="post-categories">
-                    <a href="#">Lunch</a>
-                  </div>
-                  <div class="post-body">
-                    <h5 class="post-title"><a href="blog-details.html">Organic Green Bell Pepper</a></h5>
-                    <p class="post-text">
-                      Some quick example text to build on the card title and make up the bulk of the card's content...
-                    </p>
-                  </div>
-                </article>
-              </div>
-              <!-- Post End -->
-
-              <!-- Post Start -->
-              <div class="col-lg-6 col-md-6">
-                <article class="post post-format-video">
-                  <div class="post-thumbnail">
-                    <a href="blog-details.html"><img src="assets/img/blog/3.jpg" alt="blog post" /></a>
-                    <div class="post-meta">
-                      <span>September 22, 2021</span>
-                      <span>Posted by Jonathan Pick</span>
-                    </div>
-                    <div class="video-player-trigger">
-                      <a href="https://www.youtube.com/watch?v=ySITvuQ1K74" class="popup-youtube">
-                        <i class="fas fa-play"></i>
-                        <div class="video-player-icons">
-                          <i class="flaticon-spices"></i>
-                          <i class="flaticon-ginger"></i>
-                          <i class="flaticon-spices-2"></i>
-                          <i class="flaticon-anise"></i>
-                          <i class="flaticon-herb"></i>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="post-categories">
-                    <a href="#">How-To</a>
-                    <a href="#">Agro</a>
-                  </div>
-                  <div class="post-body">
-                    <h5 class="post-title"><a href="blog-details.html">Fresh Organic Mustard Leaves</a></h5>
-                    <p class="post-text">
-                      Some quick example text to build on the card title and make up the bulk of the card's content...
-                    </p>
-                  </div>
-                </article>
-              </div>
-              <!-- Post End -->
-            </div>
+            <div class="row" id="blog_row"></div>
           </div>
         </div>
       </div>
@@ -436,6 +329,33 @@
       </div>
     </footer>
     <!-- Footer End -->
+
+    <script src="./assets/data/index.js"></script>
+    <script>
+      const blog_row = document.getElementById("blog_row");
+      blog_data.forEach((blog, index) => {
+        const blogIndex = index + 1;
+        const blogDiv = document.createElement("div");
+        blogDiv.classList.add("col-lg-6", "col-md-6", "masonry-item");
+        blogDiv.innerHTML = ` 
+            <article class="post">
+              <div class="post-thumbnail">
+                <a href="blog-details.html?blogId=${blog.id}"><img loading="lazy" src="${blog.image}" alt="blog post" /></a>
+                <div class="post-meta">
+                  <span>${blog.date}</span>
+                  <span>Posted by ${blog.owner}</span>
+                </div>
+              </div>
+              <div class="post-body">
+                <h5 class="post-title"><a href="blog-details.html?blogId=${blog.id}">${blog.name}</a></h5>
+                <p class="post-text text-truncate">
+                  ${blog.description}
+                </p>
+              </div>
+            </article>`;
+        blog_row.appendChild(blogDiv);
+      });
+    </script>
 
     <!-- Vendor Scripts -->
     <script src="assets/js/plugins/jquery-3.4.1.min.js"></script>
