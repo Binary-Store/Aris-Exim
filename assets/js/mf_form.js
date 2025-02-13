@@ -6,7 +6,7 @@
             rules: {
                 name: {
                     required: true,
-                    minlength: 2
+                    minlength: 3
                 },
                 email: {
                     required: true,
@@ -14,7 +14,7 @@
                 },
                 phone: {
                     required: true,
-                    number: true
+                    number: true,
                 },
                 password: "required",
                 repeat_password: {
@@ -28,18 +28,11 @@
         e.preventDefault();
         var has_errors = false,
             form = $(this),
+            submit_btn = $('#submit_form'),
             form_fields = form.find('input'),
-            form_message = form.find('textarea'),
-            server_result_display = form.find('.server_response');
+            form_message = form.find('textarea');
+        var server_result_display = form.find('.server_response');
 
-        var name = form.find('[name=name]').val(),
-            email = form.find('[name=email]').val(),
-            phone = form.find('[name=phone]').val(),
-            subject = form.find('[name=subject]').val(),
-            doctor = form.find('[name=doctor]').val(),
-            date = form.find('[name=date]').val(),
-            time = form.find('[name=time]').val(),
-            message = form.find('[name=message]').val();
 
 
         form_fields.each(function () {
@@ -56,7 +49,11 @@
 
         var datastring = form.serialize();
 
+        console.log(typeof datastring);
+        console.log(datastring);
+
         if (!has_errors) {
+            submit_btn.attr('disabled', true).html('Please wait...');
             $.ajax({
                 type: "POST",
                 url: form.attr('action'),
@@ -67,13 +64,16 @@
                         server_result_display.empty().html('<div class="mb-0 mt-3 alert alert-danger  alert-dismissible">' + response.errors + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
                     } else if (response.status == 'success') {
                         server_result_display.empty().html('<div class="mb-0 mt-3 alert alert-success  alert-dismissible">' + response.message + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+
                         setTimeout(function () {
                             $('form.ajax_submit .mf_alert').fadeOut(500);
                         }, 1500);
-                        form.trigger("reset");
+                        // form.trigger("reset");
                     }
+                    submit_btn.removeAttr('disabled').html('Submit');
                 },
                 error: function () {
+                    submit_btn.removeAttr('disabled').html('Submit');
                     server_result_display.empty().html('<div class="mb-0 mt-3 alert alert-danger  alert-dismissible">Server error! Please try again...<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
                 }
             });
