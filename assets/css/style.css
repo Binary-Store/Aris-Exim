@@ -698,6 +698,12 @@ img {
 .border-0 {
     border: 0;
 }
+.bg-video{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
 .bg-cover {
     background-size: cover;
@@ -1191,7 +1197,7 @@ button[type="submit"]:disabled {
 }
 
 .custom-secondary {
-    color: #1d3b70;
+    color: #2caae1;
 }
 
 .twitter {
@@ -1616,7 +1622,7 @@ table img {
 }
 
 .navbar-brand {
-    width: 100px;
+    width: 80px;
     margin: 0;
     padding: 0;
 }
@@ -6372,4 +6378,10 @@ td.quantity {
 }
 .text-primary {
     color : #1d3b70 !important;
+}
+.subheader_bg_video{
+position: absolute;
+  top: 0;
+  left: 0;
+  z-index:-100;
 }

@@ -19,7 +19,7 @@
     <!-- Organicz Style sheet -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon.png" />
   </head>
 
   <body>
@@ -121,6 +121,7 @@
             <a href="./blog.html">Blog</a>
           </li>
           <li class="menu-item"><a href="about-us.html">About Us</a></li>
+          <li class="menu-item"><a href="contact-us.html#contact_form">Inquiry</a></li>
           <li class="menu-item">
             <a href="contact-us.html">Contact Us</a>
           </li>
@@ -151,12 +152,16 @@
             <li class="menu-item">
               <a href="./blog.html">Blog</a>
             </li>
+            <li class="menu-item">
+              <a href="#product_section">product</a>
+            </li>
 
             <li class="logo-wrapper">
               <!-- Logo -->
               <a class="navbar-brand" href="index.html"> <img src="assets/img/logo.png" alt="logo" /> </a>
             </li>
             <li class="menu-item"><a href="about-us.html">About Us</a></li>
+            <li class="menu-item"><a href="contact-us.html#contact_form">Inquiry</a></li>
             <li class="menu-item">
               <a href="contact-us.html">Contact Us</a>
             </li>
@@ -177,7 +182,7 @@
     <!-- Banner Start -->
     <div class="banner banner-video dark-overlay">
       <video autoplay muted loop id="myVideo">
-        <source src="assets/img/video-banner.mp4" type="video/mp4" />
+        <source src="assets/img/video_banner.mp4" type="video/mp4" />
       </video>
       <!-- Prev Arrow -->
       <i class="slider-prev fas fa-arrow-left slick-arrow"></i>
@@ -185,38 +190,56 @@
         <div class="banner-slider">
           <div class="banner-item text-center">
             <div class="banner-inner">
-              <h1 class="title text-white">
-                Spices Brings Taste To Your <span class="custom-primary"> Kitchen </span>
-              </h1>
+              <h1 class="title text-white">From Our Farms to <span class="custom-primary"> the World </span></h1>
               <p class="subtitle text-white">
-                Bacon ipsum dolor amet ball tip pork chop cow tenderloin andouille. Pastrami pork picanha tongue venison
-                strip steak
+                Bringing fresh, high-quality, and sustainably sourced products from our fields to global markets with
+                care and dedication.
               </p>
-              <a href="#" class="btn-custom primary shadow-none"
-                >Visit Spices Bazzar <i class="fas fa-arrow-right"></i>
+              <a href="#product_section" class="btn-custom primary shadow-none"
+                >Show Product <i class="fas fa-arrow-right"></i>
               </a>
             </div>
           </div>
           <div class="banner-item text-center">
             <div class="banner-inner">
-              <h1 class="title text-white">Get All <span class="custom-primary"> Spices </span> Here</h1>
+              <h1 class="title text-white">
+                Rooted in Quality, <span class="custom-primary"> Delivered </span> with Care
+              </h1>
               <p class="subtitle text-white">
-                Bacon ipsum dolor amet ball tip pork chop cow tenderloin andouille. Pastrami pork picanha tongue venison
-                strip steak
+                Providing premium, sustainably sourced products with a commitment to excellence and customer
+                satisfaction.
               </p>
-              <a href="#" class="btn-custom primary shadow-none">Contact Me <i class="fas fa-arrow-right"></i></a>
+              <a href="./contact-us.html" class="btn-custom primary shadow-none"
+                >Contact Me <i class="fas fa-arrow-right"></i
+              ></a>
             </div>
           </div>
           <div class="banner-item text-center">
             <div class="banner-inner">
               <h1 class="title text-white">
-                <span class="custom-primary">Spices </span> From Authentic Source , Grab It
+                <span class="custom-primary">A Commitment </span> to Trust, A Legacy of Quality
               </h1>
               <p class="subtitle text-white">
-                Bacon ipsum dolor amet ball tip pork chop cow tenderloin andouille. Pastrami pork picanha tongue venison
-                strip steak
+                Delivering excellence through ethically sourced, high-quality products backed by generations of
+                expertise.
               </p>
-              <a href="#" class="btn-custom primary shadow-none">Visit My Blog <i class="fas fa-arrow-right"></i></a>
+              <a href="./about-us.html" class="btn-custom primary shadow-none"
+                >About us <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="banner-item text-center">
+            <div class="banner-inner">
+              <h1 class="title text-white">
+                A Symbol of
+                <span class="custom-primary">Quality </span> Agro Products
+              </h1>
+              <p class="subtitle text-white">
+                Cultivating excellence with premium, sustainably sourced agricultural goods you can trust.
+              </p>
+              <a href="./about-us.html" class="btn-custom primary shadow-none"
+                >About us <i class="fas fa-arrow-right"></i
+              ></a>
             </div>
           </div>
         </div>
@@ -234,8 +257,8 @@
           <p class="subtitle">We take care of your health...</p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
+        <div class="row" id="product_row">
+          <!-- <div class="col-lg-4 col-md-6">
             <div class="ct-product">
               <div class="ct-product-thumbnail">
                 <a href="product-details.html?product=cumin"><img src="assets/img/products/2.png" alt="product" /></a>
@@ -286,9 +309,9 @@
                 <p class="product-text">Taste of spice , bring excitment to you...</p>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-lg-4 col-md-6">
             <div class="ct-product">
               <div class="ct-product-thumbnail">
@@ -329,7 +352,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
     <!-- Products End -->
@@ -340,18 +363,19 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="about-wrapper">
-              <img src="assets/img/about-1.png" alt="image" />
-              <img src="assets/img/about-2.png" class="image-2 parallax_scroll_down" alt="image" />
+              <img loading="lazy" src="assets/img/about-1.png" alt="image" />
+              <img loading="lazy" src="assets/img/about-2.png" class="image-2 parallax_scroll_down" alt="image" />
             </div>
           </div>
           <div class="col-lg-6">
             <div class="section-title-wrap">
-              <h2 class="title">We Have <span class="custom-primary">25 Years </span> Of Experience</h2>
+              <h2 class="title">A Decade of <span class="custom-primary">Excellence </span>, Now Beyond Borders</h2>
               <h3 class="subtitle">From Passion to a Thriving Global Trade</h3>
               <p class="subtitle mb-0">
-                Starting as a small family business, we have grown into a well-established import-export firm committed
-                to quality and customer satisfaction. Our partnerships with local farmers ensure ethical sourcing and
-                high standards in every shipment.
+                What started as a passion has flourished into a decade of success in the domestic market. With 10 years
+                of experience, innovation, and unwavering commitment, we are now stepping onto the global stage. As we
+                expand into international trade, our mission remains the same delivering quality, trust, and excellence
+                to customers worldwide. The journey continues, now without limits!
               </p>
             </div>
             <div class="about-content">
@@ -403,7 +427,7 @@
           <div class="col-md-3">
             <div class="card shadow-sm border-0 p-3">
               <i class="fas fa-award text-warning fa-3x mb-3"></i>
-              <h5 class="fw-bold">25+ Years Experience</h5>
+              <h5 class="fw-bold">A Decade of Excellence</h5>
               <p class="text-muted">Expertise in sourcing and exporting top-grade commodities worldwide.</p>
             </div>
           </div>
@@ -465,7 +489,7 @@
           <div class="col-lg-6 col-md-6 masonry-item">
             <article class="post">
               <div class="post-thumbnail">
-                <a href="blog-single-v1.html"><img src="assets/img/blog/1.png" alt="blog post" /></a>
+                <a href="blog-single-v1.html"><img loading="lazy" src="assets/img/blog/1.png" alt="blog post" /></a>
                 <div class="post-meta">
                   <span>September 22, 2021</span>
                   <span>Posted by Jonathan Pick</span>
@@ -488,7 +512,7 @@
           <div class="col-lg-6 col-md-6 masonry-item">
             <article class="post">
               <div class="post-thumbnail">
-                <a href="blog-single-v1.html"><img src="assets/img/blog/2.png" alt="blog post" /></a>
+                <a href="blog-single-v1.html"><img loading="lazy" src="assets/img/blog/2.png" alt="blog post" /></a>
                 <div class="post-meta">
                   <span>September 24, 2021</span>
                   <span>Posted by Jonathan Pick</span>
@@ -511,7 +535,7 @@
           <div class="col-lg-6 col-md-6 masonry-item">
             <article class="post post-format-video">
               <div class="post-thumbnail">
-                <a href="blog-single-v1.html"><img src="assets/img/blog/3.jpg" alt="blog post" /></a>
+                <a href="blog-single-v1.html"><img loading="lazy" src="assets/img/blog/3.jpg" alt="blog post" /></a>
                 <div class="post-meta">
                   <span>September 22, 2021</span>
                   <span>Posted by Jonathan Pick</span>
@@ -547,7 +571,7 @@
           <div class="col-lg-6 col-md-6 masonry-item">
             <article class="post">
               <div class="post-thumbnail">
-                <a href="blog-single-v1.html"><img src="assets/img/blog/1.png" alt="blog post" /></a>
+                <a href="blog-single-v1.html"><img loading="lazy" src="assets/img/blog/1.png" alt="blog post" /></a>
                 <div class="post-meta">
                   <span>April 26, 2021</span>
                   <span>Posted by Jonathan Pick</span>
@@ -570,7 +594,7 @@
           <div class="col-lg-6 col-md-6 masonry-item">
             <article class="post">
               <div class="post-thumbnail">
-                <a href="blog-single-v1.html"><img src="assets/img/blog/5.png" alt="blog post" /></a>
+                <a href="blog-single-v1.html"><img loading="lazy" src="assets/img/blog/5.png" alt="blog post" /></a>
                 <div class="post-meta">
                   <span>April 26, 2021</span>
                   <span>Posted by Jonathan Pick</span>
@@ -605,20 +629,32 @@
             <div class="ct-testimonial-item">
               <div class="ct-testimonial-item-inner">
                 <i class="flaticon-left-quote"></i>
-                <span>Johny White</span>
+                <span>Organic Store Owner – Kerala</span>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s
+                  Finding clean and chemical-free millets was a challenge until we partnered with Aeris Exim. Our
+                  customers appreciate the purity and taste, and we’ve seen a rise in repeat buyers. Highly recommended!
                 </p>
               </div>
             </div>
             <div class="ct-testimonial-item">
               <div class="ct-testimonial-item-inner">
                 <i class="flaticon-left-quote"></i>
-                <span>Brian Masalaz</span>
+                <span>Wholesale Trader – Tamil Nadu</span>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s
+                  We’ve been in the spice trade for over 5 years, and it’s rare to find a supplier as consistent as
+                  Aeris Exim. Their cumin has a strong aroma, and the sesame seeds are always clean and uniform. We
+                  trust them for every bulk order!
+                </p>
+              </div>
+            </div>
+            <div class="ct-testimonial-item">
+              <div class="ct-testimonial-item-inner">
+                <i class="flaticon-left-quote"></i>
+                <span>Organic Store Owner – Maharashtra</span>
+                <p>
+                  Our customers demand organic and chemical-free spices, and Aeris Exim never fails to deliver. Their
+                  turmeric has a deep color and high curcumin content, while their coriander seeds have a strong natural
+                  fragrance. We are proud to sell their products!
                 </p>
               </div>
             </div>
@@ -708,7 +744,7 @@
         <div class="row">
           <div class="col-md-4 col-sm-6 footer-widget">
             <div class="px-5 py-3 bg-white rounded d-inline-block">
-              <img src="assets/img/logo.png" alt="logo" width="100" />
+              <img src="assets/img/full_logo.png" alt="logo" width="100" />
             </div>
             <p class="mt-2">
               We are a trusted exporter of premium agricultural commodities, delivering high-quality Cumin, Sesame
@@ -728,9 +764,10 @@
           <div class="col-md-4 col-sm-6 footer-widget">
             <h5 class="widget-title">Contact</h5>
             <ul>
-              <li><i class="flaticon-location"></i>&nbsp; 28 Street, New York City, USA</li>
-              <li><i class="flaticon-email"></i>&nbsp; doitezy@gmail.com</li>
+              <li><i class="flaticon-location"></i>&nbsp; Office No. – 309, Ikon World Trade, Rajkot – 360005</li>
+              <li><i class="flaticon-email"></i>&nbsp; enquiry@aerisexim.com</li>
               <li><i class="fas fa-phone"></i>&nbsp; +91 8849785969</li>
+              <li><i class="fas fa-phone"></i>&nbsp; +91 7778022173</li>
             </ul>
           </div>
         </div>
@@ -749,6 +786,32 @@
       </div>
     </footer>
     <!-- Footer End -->
+
+    <!-- data scripts -->
+    <script src="./assets/data/index.js"></script>
+    <script>
+      const productContainer = document.getElementById("product_row");
+      product_data.forEach((product, index) => {
+        const productIndex = index + 1;
+        const productDiv = document.createElement("div");
+        productDiv.classList.add("col-lg-4", "col-md-6");
+        productDiv.innerHTML = `
+          <div class="ct-product">
+            <div class="ct-product-thumbnail">
+              <a href="product-details.html?product=${product.name}"><img loading="lazy" src="${product.image}" alt="product" /></a>
+              <div class="ct-product-controls">
+                <a href="product-details.html?product=${product.name}" class="btn-custom secondary">Show Details <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="ct-product-body">
+              <h5 class="product-title"><a href="product-details.html?product=${product.name}">${product.title}</a></h5>
+              <p class="product-text text-truncate">${product.description}</p>
+            </div>
+          </div>
+        `;
+        productContainer.appendChild(productDiv);
+      });
+    </script>
 
     <!-- Vendor Scripts -->
     <script src="assets/js/plugins/jquery-3.4.1.min.js"></script>
