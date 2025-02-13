@@ -187,7 +187,7 @@
 
     <!-- Subheader Start -->
     <div class="subheader subheader-2 bg-cover bg-parallax bg-video">
-      <video autoplay muted loop class="subheader_bg_video">
+      <video autoplay muted loop class="subheader_bg_video" thumbnail="" id="video_tag">
         <source src="./assets/img/products/penuts.mp4" id="video_source" type="video/mp4" />
       </video>
       <div class="container">
@@ -483,10 +483,11 @@
     </footer>
     <!-- Footer End -->
     <script>
-      const video_source = document.getElementById("video_source");
       const urlParams = new URLSearchParams(window.location.search);
       const product_url_name = urlParams.get("product");
       const product = product_data.find((item) => item.name === product_url_name);
+      const video_source = document.getElementById("video_source");
+      const video_tag = document.getElementById("video_tag");
       const product_image = document.getElementById("product_image");
       const product_name_element = document.getElementsByClassName("product_title");
       const product_description = document.getElementsByClassName("product_description");
@@ -496,6 +497,7 @@
       const related_products = document.getElementById("related_products");
 
       video_source.src = product?.video;
+      video_tag.setAttribute("poster", `./assets/img/products/thumbnail/${product.name}.webp`);
       product_image.src = product?.image;
       Array.from(product_name_element).forEach((element) => {
         element.innerHTML = product?.title;
