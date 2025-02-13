@@ -1585,7 +1585,7 @@ table img {
     -ms-flex-direction: column;
     flex-direction: column;
     cursor: pointer;
-    margin: 20px 0;
+    margin: 10px 0;
     margin-left: 15px;
 }
 
@@ -1655,7 +1655,7 @@ table img {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    padding: 30px 20px;
+    padding: 20px;
     color: #1D2228;
     font-weight: 700;
     -webkit-transition: 0.3s;
@@ -1962,7 +1962,7 @@ table img {
 }
 
 .main-header.header-2 .navbar .menu-item a {
-    padding: 20px;
+    padding: 10px;
     color: #fff;
 }
 
@@ -1984,7 +1984,7 @@ table img {
 }
 
 .main-header.header-2.sticky .navbar .menu-item a {
-    padding: 30px 20px;
+    padding: 10px 20px;
     color: #1D2228;
 }
 
@@ -5814,7 +5814,7 @@ td.quantity {
 
 @media(max-width: 1199px) and (min-width: 992px) {
     .navbar .menu-item a {
-        padding: 30px 16px;
+        padding: 10px 16px;
     }
     .about-sec.style-3 {
         padding: 80px 0;
