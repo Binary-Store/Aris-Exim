@@ -5832,6 +5832,12 @@ td.quantity {
     }
 }
 
+@media (max-width: 360px){
+    .navbar-brand{
+        width: 200px !important;
+    }
+}
+
 @media (max-width: 991px) {
     body,
     p,
@@ -5889,7 +5895,7 @@ td.quantity {
     }
     .navbar-brand,
     .main-header.header-2 .navbar-brand {
-        width: 110px;
+        width: 300px;
         padding: 10px 0;
     }
     .section {
