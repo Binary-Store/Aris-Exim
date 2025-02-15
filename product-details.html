@@ -47,6 +47,7 @@
     <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css" />
     <link rel="stylesheet" href="assets/css/plugins/slick.css" />
     <link rel="stylesheet" href="assets/css/plugins/slick-theme.css" />
+
     <!-- Icon Fonts -->
     <link rel="stylesheet" href="assets/fonts/flaticon/flaticon.css" />
     <link rel="stylesheet" href="assets/fonts/font-awesome/css/all.min.css" />
@@ -74,11 +75,18 @@
         // Update Open Graph and Twitter meta tags dynamically
         document.querySelector('meta[property="og:title"]').setAttribute("content", `${product.name} | Aeris-Exim`);
         document.querySelector('meta[property="og:description"]').setAttribute("content", product.description);
-        document.querySelector('meta[property="og:image"]').setAttribute("content", product.image);
+        document
+          .querySelector('meta[property="og:image"]')
+          .setAttribute("content", "https://www.aerisexim.com" + product.image);
+        document
+          .querySelector('meta[property="og:url"]')
+          .setAttribute("content", "https://www.aerisexim.com/product-details?product=" + product.name);
 
         document.querySelector('meta[name="twitter:title"]').setAttribute("content", `${product.name} | Aeris-Exim`);
         document.querySelector('meta[name="twitter:description"]').setAttribute("content", product.description);
-        document.querySelector('meta[name="twitter:image"]').setAttribute("content", product.image);
+        document
+          .querySelector('meta[name="twitter:image"]')
+          .setAttribute("content", "https://www.aerisexim.com" + product.image);
 
         // Update canonical URL
         document
