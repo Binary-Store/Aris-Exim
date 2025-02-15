@@ -82,7 +82,7 @@ $html = '
             <p><strong>Message:</strong> ' . nl2br($message) . '</p>
         </div>
         <div class="footer">
-            <a href="www.aerisexim.com">www.aerisexim.com</a>
+            <a href="./index.html">./index.html</a>
         </div>
     </div>
 </body>
