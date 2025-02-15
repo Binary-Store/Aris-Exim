@@ -3,7 +3,43 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Details</title>
+    <title id="page-title">Product Details | Aeris-Exim</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      id="meta-description"
+      content="Discover detailed information about our products. Aeris-Exim offers high-quality products in bulk for export worldwide." />
+    <meta
+      name="keywords"
+      content="import export, Aeris-Exim, product details, bulk products, wholesale products, export company, Rajkot, Gujarat" />
+    <meta name="author" content="Aeris-Exim" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="product" />
+    <meta property="og:title" content="Product Details | Aeris-Exim" />
+    <meta
+      property="og:description"
+      content="Explore our detailed product listings. Aeris-Exim provides a wide range of export-ready products with comprehensive specifications and pricing." />
+    <meta property="og:image" content="https://www.aerisexim.com/assets/img/full_logo.png" />
+    <meta property="og:url" content="https://www.aerisexim.com/product-details.html?product=peanuts" />
+    <meta property="og:site_name" content="Aeris-Exim" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Product Details | Aeris-Exim" />
+    <meta
+      name="twitter:description"
+      content="Explore detailed product information from Aeris-Exim, your trusted source for bulk export products." />
+    <meta name="twitter:image" content="https://www.aerisexim.com/assets/img/full_logo.png" />
+    <meta name="twitter:site" content="@Aeris_Exim" />
+    <meta name="twitter:creator" content="@Aeris_Exim" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.aerisexim.com/product-details.html?product=peanuts" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.aerisexim.com/assets/img/favicon.png" />
 
     <!-- Vendor Stylesheets -->
     <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
@@ -17,14 +53,39 @@
 
     <!-- Organicz Style sheet -->
     <link rel="stylesheet" href="assets/css/style.css" />
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon.png" />
+
     <style>
       .tab_bar:not(.active):hover {
         color: #1d3b70;
       }
     </style>
     <script src="./assets/data/index.js"></script>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const product_url_name = urlParams.get("product");
+      const product = product_data.find((item) => item.name === product_url_name);
+
+      if (product) {
+        document.getElementById("page-title").textContent = `${product.title} | Aeris-Exim`;
+
+        // Update meta description
+        document.getElementById("meta-description").setAttribute("content", product.description);
+
+        // Update Open Graph and Twitter meta tags dynamically
+        document.querySelector('meta[property="og:title"]').setAttribute("content", `${product.name} | Aeris-Exim`);
+        document.querySelector('meta[property="og:description"]').setAttribute("content", product.description);
+        document.querySelector('meta[property="og:image"]').setAttribute("content", product.image);
+
+        document.querySelector('meta[name="twitter:title"]').setAttribute("content", `${product.name} | Aeris-Exim`);
+        document.querySelector('meta[name="twitter:description"]').setAttribute("content", product.description);
+        document.querySelector('meta[name="twitter:image"]').setAttribute("content", product.image);
+
+        // Update canonical URL
+        document
+          .querySelector('link[rel="canonical"]')
+          .setAttribute("href", `https://www.aerisexim.com/product-details?product=${product.name}`);
+      }
+    </script>
   </head>
 
   <body>
@@ -516,9 +577,6 @@
     </footer>
     <!-- Footer End -->
     <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      const product_url_name = urlParams.get("product");
-      const product = product_data.find((item) => item.name === product_url_name);
       const video_source = document.getElementById("video_source");
       const video_tag = document.getElementById("video_tag");
       const product_image = document.getElementById("product_image");
