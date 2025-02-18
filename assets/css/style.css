@@ -2322,7 +2322,7 @@ table img {
     margin: 10px 0 0;
 }
 
-.footer-widget ul li a {
+.footer-widget ul.pages li a {
     position: relative;
     display: block;
     -webkit-transform: translateX(-15px);
@@ -2330,7 +2330,7 @@ table img {
     transform: translateX(-15px);
 }
 
-.footer-widget ul li a::before {
+.footer-widget ul.pages li a::before {
     font-family: "Font Awesome 5 Free";
     content: "\f054";
     -webkit-font-smoothing: antialiased;
@@ -2353,17 +2353,17 @@ table img {
     padding-right: 10px;
 }
 
-.footer-widget ul li a i {
+.footer-widget ul.pages li a i {
     font-weight: 400;
 }
 
-.footer-widget ul li a:hover {
+.footer-widget ul.pages li a:hover {
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
 }
 
-.footer-widget ul li a:hover::before {
+.footer-widget ul.pages li a:hover::before {
     opacity: 1;
     visibility: visible;
     -webkit-transform: translateX(0);
@@ -2490,7 +2490,7 @@ table img {
     margin-top: 0;
 }
 
-.ct-footer.footer-2 .footer-widget ul li a {
+.ct-footer.footer-2 .footer-widget ul.pages li a {
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
@@ -2502,7 +2502,7 @@ table img {
     align-items: center;
 }
 
-.ct-footer.footer-2 .footer-widget ul li a::before {
+.ct-footer.footer-2 .footer-widget ul.pages li a::before {
     content: '\f111';
     opacity: 1;
     visibility: visible;
@@ -2560,7 +2560,7 @@ table img {
     font-size: 16px;
 }
 
-.footer-3 .footer-widget ul li a {
+.footer-3 .footer-widget ul.pages li a {
     font-size: 13px;
 }
 
